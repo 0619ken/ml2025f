@@ -70,12 +70,12 @@
       border:#888 1px solid;
       border-radius:3px;
   }
-  .flipswitch:after
+  .flipswitch:checked:after
   {
       left:2%;
       content: "未完成";
   }
-  .flipswitch:checked:after
+  .flipswitch:after
   {
       left:53%;
       content: "完成";
@@ -179,7 +179,7 @@
           <td>Medium baseline - 描述</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
           <td>Strong baseline - 描述</td>
         </tr>
@@ -230,19 +230,19 @@
     var score = 0;
 
     if (d3.select("#myCheckbox1").property("checked")){
-      score += parseInt(d3.select('#m1').html());
+      score -= parseInt(d3.select('#m1').html());
     }
 
     if (d3.select("#myCheckbox2").property("checked")){
-      score += parseInt(d3.select('#m2').html());   
+      score -= parseInt(d3.select('#m2').html());   
     }
 
     if (d3.select("#myCheckbox3").property("checked")){
-      score += parseInt(d3.select('#m3').html());   
+      score -= parseInt(d3.select('#m3').html());   
     }
 
     if (d3.select("#myCheckbox4").property("checked")){
-      score += parseInt(d3.select('#m4').html());   
+      score -= parseInt(d3.select('#m4').html());   
     }
 
 
@@ -252,3 +252,4 @@
 
 </body>
 </html>
+
