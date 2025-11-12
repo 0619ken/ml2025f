@@ -153,7 +153,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      這次作業讓我學到了很多知識，原來訓練完、測試完之後還會有推論這個步驟，不過想想也對，把模型會生出來的輸出進行評分也是很重要的，這樣才能知道模型生出來的東西到底是什麼情況，不過作業做是做完了，不知道為什麼評分好低阿，我在想也許是訓練筆數不夠多或是次數不夠的原因吧。
     </div>
   </div>
 
@@ -169,12 +169,12 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
           <td>Simple baseline - 描述</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>4</td>
           <td>Medium baseline - 描述</td>
         </tr>
@@ -184,7 +184,7 @@
           <td>Strong baseline - 描述</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -230,19 +230,19 @@
     var score = 0;
 
     if (d3.select("#myCheckbox1").property("checked")){
-      score += parseInt(d3.select('#m1').html());
+      score -= parseInt(d3.select('#m1').html());
     }
 
     if (d3.select("#myCheckbox2").property("checked")){
-      score += parseInt(d3.select('#m2').html());   
+      score -= parseInt(d3.select('#m2').html());   
     }
 
     if (d3.select("#myCheckbox3").property("checked")){
-      score += parseInt(d3.select('#m3').html());   
+      score -= parseInt(d3.select('#m3').html());   
     }
 
     if (d3.select("#myCheckbox4").property("checked")){
-      score += parseInt(d3.select('#m4').html());   
+      score -= parseInt(d3.select('#m4').html());   
     }
 
 
@@ -252,3 +252,4 @@
 
 </body>
 </html>
+
